@@ -1,6 +1,5 @@
 
 import App from "./App.jsx";
-//import News from "./news.jsx";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "./home.jsx";
 import { ContextUserProvider } from "./contextUser.jsx";

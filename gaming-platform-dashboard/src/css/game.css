@@ -32,7 +32,7 @@ body{
 
 .cards-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* larger min width so cards are wider */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     gap: 24px;
 }
 
@@ -45,12 +45,12 @@ body{
     transition: transform .15s ease, box-shadow .15s ease;
     display: flex;
     flex-direction: column;
-    align-items: center; /* למרכז אופקית */
+    align-items: center;
     justify-content: flex-start;
     min-height: 260px;
     box-sizing: border-box;
     position: relative;
-    text-align: center; /* כל הטקסט ממורכז */
+    text-align: center; 
 }
 
 .game-card:hover {
@@ -58,19 +58,17 @@ body{
     box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-/* כותרת המשחק */
 .card-header h2 {
     margin: 0 0 10px;
     font-size: 22px;
     font-weight: 700;
-    color: #111; /* כהה ובולט על רקע לבן */
+    color: #111; 
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 0 5px #00f0ff, 0 0 10px #8000ff; /* ניאון עדין */
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #8000ff; 
 }
 
-/* הדירוג - כוכבים מתחת לכותרת */
 .rating-row {
     display: flex;
     align-items: center;
@@ -89,7 +87,6 @@ body{
     color: var(--muted);
 }
 
-/* שדה דירוג וכפתור */
 input[name="rating"] {
     width: 80px;
     padding: 6px;
@@ -118,17 +115,15 @@ input[name="rating"] {
     box-shadow: 0 0 14px rgba(255,208,85,0.9);
 }
 
-/* תיאור המשחק */
 .description {
     margin-top: auto;
-    color: #333; /* קריא יותר */
+    color: #333; 
     font-size: 15px;
     line-height: 1.5;
     text-align: center;
     max-width: 85%;
 }
 
-/* הרקע הכללי */
 
 
 @media (max-width: 480px){

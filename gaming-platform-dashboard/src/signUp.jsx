@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {jwtDecode} from "jwt-decode";
 import { useContext } from "react";
 import { ContextUser } from "./contextUser.jsx";

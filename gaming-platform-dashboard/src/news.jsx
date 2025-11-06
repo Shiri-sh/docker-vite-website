@@ -11,7 +11,7 @@ import './css/news.css';
 
       } 
     useEffect(() => {
-       fetchLatestNews(); // טעינה ראשונית
+       fetchLatestNews(); 
      },[]);
 
      return (
