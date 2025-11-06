@@ -8,7 +8,8 @@ CREATE TABLE Games (
 CREATE TABLE Users (
     UserId INT PRIMARY KEY AUTO_INCREMENT,
     Username VARCHAR(50),
-    PasswordHash VARCHAR(256)
+    PasswordHash VARCHAR(256),
+    Role VARCHAR(20) DEFAULT 'USER'
 );
 
 CREATE TABLE Ratings (
@@ -28,11 +29,6 @@ INSERT INTO Games (Title, Description) VALUES
 ('Pixel Racer', 'Retro-style racing game with pixel art'),
 ('Dragon Forge', 'Fantasy RPG with dragons and crafting'),
 ('Space Dominion', 'Strategy game set in outer space');
-
-INSERT INTO Users (Username, PasswordHash) VALUES
-('player1', 'hash123'),
-('player2', 'hash456'),
-('player3', 'hash789');
 
 INSERT INTO Ratings (GameId, UserId, Score) VALUES
 (1, 1, 5),
