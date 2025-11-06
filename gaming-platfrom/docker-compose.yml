@@ -1,0 +1,83 @@
+version: "3.9"
+
+services:
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "4001:4001"
+    volumes:
+      - ./user-service:/app
+    environment:
+      - PORT=4001
+      - JWT_SECRET=gaming_jwt_secret
+      - DB_HOST=mysql
+      - DB_USER=gamer
+      - DB_NAME=GamingPlatformDB
+      - DB_PASSWORD=GamerPass123
+    depends_on:
+      - mysql
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+
+  game-service:
+    build: ./game-service
+    container_name: game-service
+    ports:
+      - "4002:4002"
+    volumes:
+      - ./game-service:/app
+    environment:
+      - PORT=4002
+      - JWT_SECRET=gaming_jwt_secret
+      - DB_HOST=mysql
+      - DB_USER=gamer
+      - DB_NAME=GamingPlatformDB
+      - DB_PASSWORD=GamerPass123
+    depends_on:
+      - mysql
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+
+  news-service:
+    build: ./news-service
+    container_name: news-service
+    ports:
+      - "4003:4003"
+    volumes:
+      - ./news-service:/app
+    environment:
+      - PORT=4003
+      - NEWS_API_KEY=93f2d818afa3416a82be856f5deccad9
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+ 
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=YourPassword123
+      - MYSQL_DATABASE=GamingPlatformDB
+      - MYSQL_USER=gamer
+      - MYSQL_PASSWORD=GamerPass123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql-init:/docker-entrypoint-initdb.d
+    restart: always
+
+volumes:
+  mysql_data:

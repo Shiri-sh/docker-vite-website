@@ -1,0 +1,137 @@
+/* רקע כללי */
+body { margin: 0; }
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  gap: 30px;
+  padding: 300px;
+  box-sizing: border-box;
+  background-color: #0d0d0d; /* שחור עמוק */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d0d0d; /* צבע בסיסי לטקסט */
+}
+
+/* עמודות */
+.column {
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(2, 2, 2, 0.3), 0 0 40px rgba(128, 0, 255, 0.3); /* אפקט ניאון */
+  background: linear-gradient(145deg, #1b1b1b, #2a2a2a); /* רקע כהה עם gradient */
+  border: 1px solid rgba(128,0,255,0.5);
+}
+
+/* גודל עמודות */
+.news-column {
+  flex: 1;
+  max-height: 100%;
+}
+
+.games-column {
+  flex: 2;
+  max-height: 100%;
+}
+
+/* כותרות ניאון */
+.column h2 , .welcome-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #00f0ff; /* תכלת ניאון */
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #8000ff, 0 0 30px #8000ff;
+  border-bottom: 2px solid #8000ff;
+  padding-bottom: 5px;
+}
+
+/* גלילה חלקה */
+.column::-webkit-scrollbar {
+  width: 10px;
+}
+
+.column::-webkit-scrollbar-thumb {
+  background-color: #8000ff; /* סגול ניאון */
+  border-radius: 5px;
+}
+
+.column::-webkit-scrollbar-track {
+  background-color: #1b1b1b;
+}
+
+/* טקסט פנימי */
+.column span {
+  color: #cdb4d6;
+}
+
+/* תצוגה על כל העמוד */
+.home-container {
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* רשימת חדשות ככרטיסים (כמו כרטיסי משחק) */
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* עבור מסכים רחבים ניתן להציב כרטיסי חדשות בשורה */
+@media (min-width: 900px) {
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-card {
+  background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+  border: 1px solid rgba(128,0,255,0.25);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  transition: transform .12s ease, box-shadow .12s ease;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.08);
+}
+
+.news-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #e7dfdf;
+}
+
+.news-card p {
+  margin: 6px 0 0 0;
+  color: #c0c0ff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.news-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: black/* rgba(192,192,255,0.8)*/;
+}
+
+/* הקטנת סרגל גלילה בעמוד הראשי */
+.home-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.home-container::-webkit-scrollbar-thumb {
+  background-color: #8000ff;
+  border-radius: 5px;
+}
+
+.home-container::-webkit-scrollbar-track {
+  background-color: #111;
+}
