@@ -5,4 +5,5 @@ RUN  npm install
 COPY . .
 ENV PORT=4002
 EXPOSE 4002
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
+
